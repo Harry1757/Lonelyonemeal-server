@@ -12,13 +12,13 @@ module.exports = {
         });
 
         if (!resave) {
-		await recipeLogs.create({
+            await recipeLogs.create({
                 userId: req.session.userId,
                 foodName: foodName,
                 foodImg: foodImg,
                 link: link,
             })
-           res.status(200).send()
+            res.status(200).send();
         } else {
             res.status(409).send({ message: "recipe exists" })
         }
